@@ -15,43 +15,78 @@
         <p>Dzielnica Vetoria</p>
       </div>
     </div>
-    <nav>
-      <ul>
-        <li><a href="#o-dzielnicy">O dzielnicy</a></li>
-        <li><a href="#galeria">Galeria</a></li>
-        <li><a href="#kontakt">Kontakt</a></li>
-      </ul>
-    </nav>
   </header>
-  <main>
-    <section id="o-dzielnicy">
-      <h2>O dzielnicy</h2>
-      <p>
-        Stara Przystań to malownicza dzielnica w sercu miasta Vetoria. Znana z bogatej historii i urokliwych uliczek, dzielnica łączy tradycję z nowoczesnością. Spacerując po Starej Przystani, można podziwiać zabytkowe budynki, zielone skwery oraz liczne kawiarnie i galerie sztuki.
-      </p>
-    </section>
-    <section id="galeria">
-      <h2>Galeria</h2>
-      <div class="gallery">
-        <img src="images/image1.jpg" alt="Widok ulicy w Starej Przystani">
-        <img src="images/image2.jpg" alt="Zabytkowy budynek">
-        <img src="images/image3.jpg" alt="Park w Starej Przystani">
-      </div>
-    </section>
-    <section id="kontakt">
-      <h2>Kontakt</h2>
-      <p>
-        Masz pytania lub chcesz dowiedzieć się więcej o dzielnicy Stara Przystań? Skontaktuj się z nami:
-      </p>
-      <ul>
-        <li>Email: info@vetoria.pl</li>
-        <li>Telefon: +48 123 456 789</li>
-        <li>Adres: ul. Stara Przystań 1, Vetoria</li>
-      </ul>
-    </section>
-  </main>
+
+  <!-- Nawigacja w formie zakładek -->
+  <div class="tabs">
+    <button class="tablinks" onclick="openTab(event, 'Odzielnicy')" id="defaultTab">O dzielnicy</button>
+    <button class="tablinks" onclick="openTab(event, 'Atrakcje')">Atrakcje</button>
+    <button class="tablinks" onclick="openTab(event, 'Historia')">Historia</button>
+    <button class="tablinks" onclick="openTab(event, 'Kontakt')">Kontakt</button>
+  </div>
+
+  <!-- Treść zakładek -->
+  <div id="Odzielnicy" class="tabcontent">
+    <h2>O dzielnicy</h2>
+    <p>
+      Stara Przystań to malownicza dzielnica w sercu miasta Vetoria, znana z bogatej historii i urokliwych uliczek, która łączy tradycję z nowoczesnością.
+    </p>
+  </div>
+
+  <div id="Atrakcje" class="tabcontent">
+    <h2>Atrakcje</h2>
+    <p>
+      Dzielnica oferuje wiele atrakcji – klimatyczne kawiarnie, galerie sztuki oraz zabytkowe budynki, które przyciągają turystów i mieszkańców.
+    </p>
+    <div class="image-grid">
+      <img src="images/atrakcje1.jpg" alt="Atrakcja 1">
+      <img src="images/atrakcje2.jpg" alt="Atrakcja 2">
+      <img src="images/atrakcje3.jpg" alt="Atrakcja 3">
+    </div>
+  </div>
+
+  <div id="Historia" class="tabcontent">
+    <h2>Historia</h2>
+    <p>
+      Dzielnica Stara Przystań ma bogatą historię sięgającą wieków. Spacerując jej ulicami, można poczuć ducha przeszłości oraz poznać fascynujące opowieści o dawnych czasach.
+    </p>
+    <div class="image-grid">
+      <img src="images/historia1.jpg" alt="Historyczne zdjęcie">
+    </div>
+  </div>
+
+  <div id="Kontakt" class="tabcontent">
+    <h2>Kontakt</h2>
+    <p>
+      Masz pytania lub chcesz dowiedzieć się więcej? Skontaktuj się z nami:
+    </p>
+    <ul>
+      <li>Email: info@vetoria.pl</li>
+      <li>Telefon: +48 123 456 789</li>
+      <li>Adres: ul. Stara Przystań 1, Vetoria</li>
+    </ul>
+  </div>
+
   <footer>
     <p>&copy; 2025 Stara Przystań - Vetoria. Wszelkie prawa zastrzeżone.</p>
   </footer>
+
+  <script>
+    function openTab(evt, tabName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(tabName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+    // Ustawienie domyślnej zakładki
+    document.getElementById("defaultTab").click();
+  </script>
 </body>
 </html>
